@@ -246,6 +246,19 @@
                 />
             </div>
         </main>
+        <script>
+            const audio = document.getElementById("background-audio");
+
+            // Cek apakah posisi waktu simpan sebelumnya ada
+            if (localStorage.getItem("audioTime")) {
+                audio.currentTime = localStorage.getItem("audioTime");
+            }
+
+            // Simpan posisi waktu audio setiap detik
+            setInterval(() => {
+                localStorage.setItem("audioTime", audio.currentTime);
+            }, 1000);
+        </script>
         <script src="scriptv2.js"></script>
     </body>
 </html>
