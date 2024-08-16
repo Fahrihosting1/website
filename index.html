@@ -198,11 +198,6 @@
         </style>
     </head>
     <body>
-        <!-- Lagu otomatis diputar -->
-        <audio autoplay>
-            <source src="lagu/lagu.mp3" type="audio/mp3" />
-            Your browser does not support the audio element.
-        </audio>
         <header>
             <h1>Selamat Datang Di Market Place</h1>
         </header>
@@ -246,19 +241,6 @@
                 />
             </div>
         </main>
-        <script>
-            const audio = document.getElementById("background-audio");
-
-            // Cek apakah posisi waktu simpan sebelumnya ada
-            if (localStorage.getItem("audioTime")) {
-                audio.currentTime = localStorage.getItem("audioTime");
-            }
-
-            // Simpan posisi waktu audio setiap detik
-            setInterval(() => {
-                localStorage.setItem("audioTime", audio.currentTime);
-            }, 1000);
-        </script>
         <script src="scriptv2.js"></script>
     </body>
 </html>
