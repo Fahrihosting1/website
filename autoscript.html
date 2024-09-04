@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shope Fahri - Assisten</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            .dropbtn {
+                background-color: #25d366;
+                color: white;
+                padding: 8px 16px; /* Sesuaikan padding dengan ukuran tombol .whatsapp-link */
+                border-radius: 5px; /* Tambahkan border-radius untuk sudut membulat */
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+                display: inline-block; /* Menyamakan display dengan .whatsapp-link */
+            }
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+            .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            .dropbtn {
+                background-color: #25d366;
+                color: white;
+                padding: 9px 16px;
+                font-size: 15px;
+                border: none;
+                cursor: pointer;
+            }
+            .dropbtn:hover {
+                background-color: #25d366;
+            }
+        </style>
+    </head>
+    <body>
+        <audio id="background-audio" autoplay>
+            <source src="lagu/lagu.mp3" type="audio/mp3" />
+            Your browser does not support the audio element.
+        </audio>
+        <header>
+            <h1>GaraXyz - Assisten</h1>
+            <nav>
+                <ul>
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn">Produk List</a>
+                        <div class="dropdown-content">
+                            <a href="#products">Products</a>
+                            <a href="indexv2.html">Vps Digital Ocean</a>
+                            <a href="https://wa.me/6287786336665">Contact</a>
+                        </div>
+                    </div>
+                    <li>
+                        <a
+                            href="https://wa.me/6287786336665"
+                            target="_blank"
+                            class="whatsapp-link"
+                            >Contact Admin</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <section id="products">
+            <div class="container">
+                <div class="product">
+                    <img
+                        src="https://telegra.ph/file/8e404c67f8d3d17284478.jpg"
+                        alt="https://wa.me/6287786336665"
+                    />
+                    <h3>Script Auto Install Panel</h3>
+                    <p>Harga : Rp55.000</p>
+                    <a
+                        href="https://wa.me/6287786336665"
+                        class="contact-button"
+                        data-product="Mau Beli Script Auto Install Panel"
+                    >
+                        Contact via WhatsApp
+                    </a>
+                </div>
+                <div class="product">
+                    <img
+                        src="https://telegra.ph/file/7669ce6561a0b4131c457.jpg"
+                        alt="Bang Mau Beli Script Store bang"
+                    />
+                    <h3>Script Store Simpel</h3>
+                    <p>Harga : Rp15.000</p>
+                    <a
+                        href="https://wa.me//6287786336665"
+                        class="contact-button"
+                        data-product="Bang Mau Beli Script Store bang"
+                    >
+                        Contact via WhatsApp
+                    </a>
+                </div>
+                <div class="product">
+                    <img
+                        src="https://telegra.ph/file/54194c4441b1eb0d9efbe.jpg"
+                        alt="Bang Mau Beli Script Cvps"
+                    />
+                    <h3>Script Create Vps Prov Do</h3>
+                    <p>Harga : Rp15.000</p>
+                    <a
+                        href="https://wa.me//6287786336665"
+                        class="contact-button"
+                        data-product="Bang Mau Beli Script Cvps"
+                    >
+                        Contact via WhatsApp
+                    </a>
+                </div>
+                <div class="product">
+                    <img
+                        src="https://telegra.ph/file/aae5ac7231a6431e52a31.jpg"
+                        alt="Bang Beli Script MD DII Bot WhatsApp"
+                    />
+                    <h3>Script Dii Bot WhatsApp</h3>
+                    <p>Harga : Rp45.000</p>
+                    <a
+                        href="https://wa.me//6287786336665"
+                        class="contact-button"
+                        data-product="Product 2"
+                    >
+                        Contact via WhatsApp
+                    </a>
+                </div>
+                <div class="product">
+                    <img
+                        src="https://telegra.ph/file/d88b30beda31cb29ce9a7.jpg"
+                        alt="Bang Saya Mau Beli Script Cpanel Telegram"
+                    />
+                    <h3>Script Cpanel Telegram</h3>
+                    <p>Harga : Rp35.000</p>
+                    <a
+                        href="https://wa.me//6287786336665"
+                        class="contact-button"
+                        data-product="Product 2"
+                    >
+                        Contact via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p2>Hai Kami Dari Web Yang Menyediakan Hosting Bot Cpanel</p2>
+            </div>
+        </section>
+        <footer>
+            <p>&copy; 2024 Shop GaraXyz - Assisten</p>
+        </footer>
+        <script>
+            const audio = document.getElementById("background-audio");
+
+            // Cek apakah posisi waktu simpan sebelumnya ada
+            if (localStorage.getItem("audioTime")) {
+                audio.currentTime = localStorage.getItem("audioTime");
+            }
+
+            // Simpan posisi waktu audio setiap detik
+            setInterval(() => {
+                localStorage.setItem("audioTime", audio.currentTime);
+            }, 1000);
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
