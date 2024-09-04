@@ -3,119 +3,101 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Halaman Awal</title>
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
-        />
-        <link rel="stylesheet" href="stylesv2.css" />
+        <title>Market Place - Store GaraXyz</title>
         <style>
             body {
-                font-family: "Poppins", sans-serif;
-                animation: fadeIn 1.5s ease-in-out;
-                background-image: url("https://telegra.ph/file/4de02e6fb37a38399566e.jpg");
-                background-size: cover;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
+                font-family: Arial, sans-serif;
                 margin: 0;
                 padding: 0;
-                color: #fff;
+                transition: background-color 0.5s ease;
             }
-
-            @keyframes ripple {
-                0% {
-                    transform: scale(0);
-                    opacity: 0.5;
-                }
-                100% {
-                    transform: scale(1);
-                    opacity: 0;
-                }
+            .sidebar {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s ease;
+                padding-top: 60px;
             }
-
-            header {
-                position: relative;
-                background: rgba(51, 51, 51, 0.8);
-                color: #fff;
-                animation: slideInFromTop 1s ease-out;
-                padding: 20px 0;
-                text-align: center;
-                box-shadow: 0 2px 4px rgba(51, 51, 51, 0.8);
-                overflow: hidden;
+            .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s ease;
             }
-
-            header::before {
-                content: "";
+            .sidebar a:hover {
+                color: #f1f1f1;
+            }
+            .sidebar .closebtn {
                 position: absolute;
                 top: 0;
-                left: 50%;
-                width: 200%;
-                height: 100%;
-                background: linear-gradient(
-                    to right,
-                    rgba(255, 255, 255, 0.2),
-                    rgba(255, 255, 255, 0.1)
-                );
-                animation: ripple 4s infinite;
-                transform: translateX(-50%);
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
             }
-
-            h1 {
-                font-family: "Georgia", serif;
-                font-weight: 600;
-                color: #3498db;
-                margin-bottom: 20px;
-            }
-
-            h2 {
-                font-family: "Poppins", sans-serif;
-                font-weight: 400;
-                color: #3498db;
-                margin-bottom: 20px;
-            }
-
-            p {
-                font-family: "Poppins", sans-serif;
-                font-size: 18px;
-                line-height: 1.6;
-                margin-bottom: 20px;
-                color: #fff;
-            }
-
-            .contact-button {
-                background-color: #4caf50;
-                color: white;
-                border: none;
-                padding: 10px 20px;
-                font-size: 18px;
+            .openbtn {
+                font-size: 30px; /* Ukuran font lebih besar untuk ikon hamburger */
                 cursor: pointer;
-                transition:
-                    background-color 0.3s ease,
-                    transform 0.2s ease;
-                border-radius: 5px;
-                font-family: "Poppins", sans-serif;
+                background-color: #111;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                transition: 0.3s ease;
             }
 
-            .contact-button:hover {
-                background-color: #45a049;
+            .openbtn:hover {
+                background-color: #444;
+            }
+
+            #main {
+                transition: margin-left 0.5s ease;
+                padding: 16px;
+                animation: fadeInUp 1s ease-out;
+            }
+            .anime-gallery {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .anime-gallery img {
+                width: 200px;
+                height: auto;
+                margin: 10px;
+                transition: transform 0.3s ease;
+                animation: fadeIn 1s ease-out;
+            }
+            .anime-gallery img:hover {
                 transform: scale(1.05);
             }
-
-            footer {
-                background: #000;
-                color: #fff;
-                text-align: center;
-                padding: 20px 0;
-                font-size: 16px;
-                animation: slideInFromBottom 1s ease-out;
-                width: 100%;
-                box-sizing: border-box;
-                position: fixed;
-                bottom: 0;
-                font-family: "Poppins", sans-serif;
+            .contact-button {
+                display: inline-block;
+                background-color: #4caf50;
+                color: white;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 20px;
+                transition: background-color 0.3s ease;
             }
-
+            .contact-button:hover {
+                background-color: #45a049;
+            }
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
             @keyframes fadeIn {
                 from {
                     opacity: 0;
@@ -124,123 +106,65 @@
                     opacity: 1;
                 }
             }
-
-            .highlighted-paragraph {
-                background: rgba(0, 0, 0, 0.6);
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-                margin: 20px auto;
-                max-width: 800px;
-                color: #f0f0f0;
-                text-align: center;
-            }
-
-            .anime-gallery {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 15px;
-                margin: 20px auto;
-                max-width: 800px;
-                justify-items: center;
-            }
-
-            .anime-gallery img {
-                border-radius: 10px;
-                width: 100%;
-                aspect-ratio: 1 / 1;
-                object-fit: cover;
-                transition:
-                    transform 0.3s ease,
-                    filter 0.3s ease,
-                    box-shadow 0.3s ease;
-                border: 5px solid #3498db;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            }
-
-            .anime-gallery img:hover {
-                transform: scale(1.1);
-                filter: brightness(1.2);
-                border-color: #1d72b8;
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
-            }
-
-            nav {
-                text-align: center;
-                margin: 20px 0;
-            }
-
-            .nav-menu {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-
-            .nav-menu li {
-                display: inline;
-                margin: 0 15px;
-            }
-
-            .nav-menu a {
-                color: #3498db;
-                text-decoration: none;
-                font-size: 18px;
-            }
-
-            .nav-menu a:hover {
-                text-decoration: underline;
-            }
-
-            main {
-                padding: 20px;
-                text-align: center;
-            }
         </style>
     </head>
     <body>
-        <header>
-            <h1>Selamat Datang Di Market Place</h1>
-        </header>
-        <canvas id="snowCanvas"></canvas>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#">Beranda</a></li>
-                <li><a href="#">Tentang</a></li>
-                <li><a href="#">Kontak</a></li>
-            </ul>
-        </nav>
-
-        <main>
-            <h2>Store GaraXyz - Assisten</h2>
-            <a href="indexv1.html" target="_blank" class="contact-button"
-                >MENU AWAL SHOP</a
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >&times;</a
             >
-            <p class="highlighted-paragraph">
-                Selamat datang di Store GaraXyz! Kami menawarkan berbagai produk
-                berkualitas tinggi dan layanan pelanggan yang terbaik. Temukan
-                pilihan kami yang beragam dan nikmati pengalaman belanja yang
-                tidak terlupakan. Kami berkomitmen untuk memberikan Anda
-                produk-produk terbaik dengan harga yang kompetitif.
-            </p>
-            <div class="anime-gallery">
-                <img
-                    src="https://telegra.ph/file/5b1eb06f332e963861635.jpg"
-                    alt="Anime 1"
-                />
-                <img
-                    src="https://telegra.ph/file/f38aaf68803af97d4c416.jpg"
-                    alt="Anime 2"
-                />
-                <img
-                    src="https://telegra.ph/file/c8b135be3fc92121d2359.jpg"
-                    alt="Anime 3"
-                />
-                <img
-                    src="https://telegra.ph/file/e43eef6c6af7f081a8513.jpg"
-                    alt="Anime 4"
-                />
-            </div>
-        </main>
-        <script src="scriptv2.js"></script>
+            <a href="#">Beranda</a>
+            <a href="#">Tentang</a>
+            <a href="#">Kontak</a>
+        </div>
+
+        <div id="main">
+            <button class="openbtn" onclick="openNav()">&#9776;</button>
+            <main>
+                <h1>Selamat Datang Di Market Place</h1>
+                <h2>Store GaraXyz - Assisten</h2>
+<button class="contact-button" onclick="window.open('indexv1.html', '_blank')">MENU AWAL SHOP</button>
+                <p>
+                    Selamat datang di Store GaraXyz! Kami menawarkan berbagai
+                    produk berkualitas tinggi dan layanan pelanggan yang
+                    terbaik. Temukan pilihan kami yang beragam dan nikmati
+                    pengalaman belanja yang tidak terlupakan. Kami berkomitmen
+                    untuk memberikan Anda produk-produk terbaik dengan harga
+                    yang kompetitif.
+                </p>
+                <div class="anime-gallery">
+                    <img
+                        src="https://telegra.ph/file/5b1eb06f332e963861635.jpg"
+                        alt="Anime 1"
+                    />
+                    <img
+                        src="https://telegra.ph/file/f38aaf68803af97d4c416.jpg"
+                        alt="Anime 2"
+                    />
+                    <img
+                        src="https://telegra.ph/file/c8b135be3fc92121d2359.jpg"
+                        alt="Anime 3"
+                    />
+                    <img
+                        src="https://telegra.ph/file/e43eef6c6af7f081a8513.jpg"
+                        alt="Anime 4"
+                    />
+                </div>
+            </main>
+        </div>
+
+        <script>
+            function openNav() {
+                document.getElementById("mySidebar").style.width = "250px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.body.style.backgroundColor = "white";
+            }
+        </script>
     </body>
 </html>
